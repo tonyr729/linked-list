@@ -160,12 +160,20 @@ h1 {
 .input__submit:hover {
   background-color: #FFD773;
 }
+.input__submit:disabled {
+  background-color: #CFD8DC;
+}
 
 .readCard {
   background: #F2F4F4;
 }
 
 .readButton {
+  display: inline-block;
+  margin: 0 0 0 15px;
+  border: none;
+  font-size: 1.2em;
+  text-decoration-color: #f2f4f4;
   font-weight: bold;
   color: #F05A28;
 }

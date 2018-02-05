@@ -33,13 +33,13 @@ function createCard(section, article) {
   counter++;
 }
 
-articleButtonRead.addEventListener('click', markedRead);
-function markedRead() {
-  console.log("button working")
-  card.setAttribute('class', 'readCard');
-  articleButtonRead.setAttribute('class', 'readButton');
-  articleLink.setAttribute('class', 'readLink');
-}
+// articleButtonRead.addEventListener('click', markedRead);
+// function markedRead() {
+//   console.log("button working")
+//   card.setAttribute('class', 'readCard');
+//   articleButtonRead.setAttribute('class', 'readButton');
+//   articleLink.setAttribute('class', 'readLink');
+// }
 
 inputTitle.addEventListener('input', disableEnter)
 inputUrl.addEventListener('input', disableEnter)
@@ -53,5 +53,6 @@ function disableEnter() {
     // warningText.textContent = '* Please put information in the required fields *';
   } else {
     inputSubmit.disabled = false;
+    console.log("working");
   }
 }
