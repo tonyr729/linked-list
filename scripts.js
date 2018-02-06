@@ -11,6 +11,8 @@ var counter = 1;
 var warningText = document.querySelector('.article__p-warning');
 var deleteAllButton = document.querySelector('.button__delete');
 
+deleteAllButton.style.display = "none";
+
 
 
 inputSubmit.addEventListener('click', createBookmark);
@@ -19,8 +21,6 @@ function createBookmark() {
   var sectionRight= document.querySelector('.section__right');
   var card = document.createElement('article');
   card.setAttribute('class', 'card');
-  console.log(sectionRight);
-  console.log(card);
   createCard(sectionRight, card); 
 }
 
@@ -40,14 +40,13 @@ function createCard(section, article) {
 sectionRight.addEventListener('click', markedRead);
 function markedRead() {
   if (event.target && event.target.matches(".article__button-read")) {
-    console.log('EventlistenerCard')
     var card = event.target.closest('article');
-    console.log(card)
     card.classList.toggle('readCard');
     event.target.classList.toggle('readButton');
-    var array = document.querySelectorAll('.readCard')
+    var array = document.querySelectorAll('.readCard');
     bookmarkReadCounter.innerText = 'Read: ' + array.length;
-    console.log(array.length);
+    deleteAllButton.style.display = "";
+
 
   }
 };
@@ -67,20 +66,20 @@ function deleteAll() {
   var allRead = document.querySelectorAll('.readCard');
   for (var i = 0; i < allRead.length; i++) {
     allRead[i].remove();
+    deleteAllButton.style.display = "none";
   }
-
-
 }
+
 inputTitle.addEventListener('input', disableEnter)
 inputUrl.addEventListener('input', disableEnter)
 function disableEnter() {
-  console.log('disableEnter')
   if (inputTitle.value === '' || inputUrl.value === '') {
     inputSubmit.disabled = true;
     warningText.innerText = '* Please put information in the required fields *';
   } else {
     inputSubmit.disabled = false;
     warningText.innerText = '';
-    console.log("working");
+
   }
 }
+

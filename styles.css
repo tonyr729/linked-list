@@ -84,7 +84,7 @@ h1 {
   border: none;
   color: #455A64;
   font-size: 1.2em;
-  text-decoration-color: #f2f4f4;
+  background: none;
 }
 
 .article__button-delete {
@@ -94,7 +94,7 @@ h1 {
   border: none;
   color: #455A64;
   font-size: 1.2em;
-  text-decoration-color: #f2f4f4;
+  background: none;
 }
 
 
@@ -151,6 +151,14 @@ h1 {
   color: #FFF;
 }
 
+.button__delete {
+  display: inline-block;
+  margin: 0 0 0 0;
+  border: none;
+  font-size: 1em;
+
+}
+
 .input__submit {
   display: block;
   width: 85%;
@@ -180,7 +188,7 @@ h1 {
   margin: 0 0 0 15px;
   border: none;
   font-size: 1.2em;
-  text-decoration-color: #CFD8DC;
+  background: #F2F4F4;
   font-weight: bold;
   color: #F05A28;
 }
