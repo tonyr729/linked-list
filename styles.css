@@ -78,7 +78,7 @@ h1 {
   font-size: 1.8em;
   text-decoration-color: #f2f4f4;
 }
-.article__button {
+.article__button-read {
   display: inline-block;
   margin: 0 0 0 15px;
   border: none;
@@ -87,10 +87,17 @@ h1 {
   text-decoration-color: #f2f4f4;
 }
 
-#article__button-delete {
+.article__button-delete {
+  display: inline-block;
+  margin: 0 10px 0 0px;
   float: right;
-  margin: 0 10px 0 0;
+  border: none;
+  color: #455A64;
+  font-size: 1.2em;
+  text-decoration-color: #f2f4f4;
 }
+
+
 .bookmark {
   background-color: #fff;
   width: 90%;
@@ -120,9 +127,9 @@ h1 {
 .article__div-counter {
   display: inline;
   position: relative;
-  margin:0 0 0 0;
+  margin:0 0 0 85px;
   height:25px;
-  width:250px;
+  width:400px;
 }
 
 .aritcle__div-warning {
@@ -140,8 +147,8 @@ h1 {
 
 .article__p-warning {
   position: absolute;
-  margin:0 0 0 0;
-  color: #F05A28;
+  margin:65px 0 0 -475px;
+  color: #FFF;
 }
 
 .input__submit {
@@ -173,7 +180,7 @@ h1 {
   margin: 0 0 0 15px;
   border: none;
   font-size: 1.2em;
-  text-decoration-color: #f2f4f4;
+  text-decoration-color: #CFD8DC;
   font-weight: bold;
   color: #F05A28;
 }
