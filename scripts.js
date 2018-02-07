@@ -11,18 +11,22 @@ var counter = 1;
 var warningText = document.querySelector('.article__p-warning');
 var deleteAllButton = document.querySelector('.button__delete');
 
+inputSubmit.addEventListener('click', createBookmark);
+sectionRight.addEventListener('click', markedRead);
+sectionRight.addEventListener('click', deleteCard);
+deleteAllButton.addEventListener('click', deleteAll);
+inputTitle.addEventListener('input', disableEnter)
+inputUrl.addEventListener('input', disableEnter)
+
 deleteAllButton.style.display = "none";
 
-
-
-inputSubmit.addEventListener('click', createBookmark);
 function createBookmark() {
   event.preventDefault();
   var sectionRight= document.querySelector('.section__right');
   var card = document.createElement('article');
   card.setAttribute('class', 'card');
   createCard(sectionRight, card); 
-}
+};
 
 function createCard(section, article) {
   section.appendChild(article);
@@ -35,43 +39,41 @@ function createCard(section, article) {
     <button class="article__button-delete" id="article__button-delete">Delete</p>`);
   bookmarkMadeCounter.innerText = 'Bookmark Made: ' + counter;
   counter++;
-}
+  clearInputFields();
+};
 
-sectionRight.addEventListener('click', markedRead);
 function markedRead() {
   if (event.target && event.target.matches(".article__button-read")) {
     var card = event.target.closest('article');
     card.classList.toggle('readCard');
     event.target.classList.toggle('readButton');
-    var array = document.querySelectorAll('.readCard');
-    bookmarkReadCounter.innerText = 'Read: ' + array.length;
-    deleteAllButton.style.display = "";
-
-
-  }
+    setArrayDisplay();
+  };
 };
 
-sectionRight.addEventListener('click', deleteCard);
+function setArrayDisplay() {
+    var array = document.querySelectorAll('.readCard');          
+    bookmarkReadCounter.innerText = 'Read: ' + array.length;
+    deleteAllButton.style.display = "";
+};
+
 function deleteCard() {
   if (event.target && event.target.matches(".article__button-delete")) {
   var card = event.target.closest('article');
   card.remove();
   var array = document.querySelectorAll('.readCard');
   bookmarkReadCounter.innerText = 'Read: ' + array.length;
-  }
-}
+  };
+};
 
-deleteAllButton.addEventListener('click', deleteAll);
 function deleteAll() {
   var allRead = document.querySelectorAll('.readCard');
   for (var i = 0; i < allRead.length; i++) {
     allRead[i].remove();
     deleteAllButton.style.display = "none";
-  }
-}
+  };
+};
 
-inputTitle.addEventListener('input', disableEnter)
-inputUrl.addEventListener('input', disableEnter)
 function disableEnter() {
   if (inputTitle.value === '' || inputUrl.value === '') {
     inputSubmit.disabled = true;
@@ -79,7 +81,12 @@ function disableEnter() {
   } else {
     inputSubmit.disabled = false;
     warningText.innerText = '';
+  };
+};
 
-  }
+function clearInputFields() {
+  console.log('input clear');
+  inputTitle.value = '';
+  inputUrl.value = '';
+  inputSubmit.disabled = true;
 }
-
