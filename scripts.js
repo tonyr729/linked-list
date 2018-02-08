@@ -85,7 +85,6 @@ function disableEnter() {
 };
 
 function clearInputFields() {
-  console.log('input clear');
   inputTitle.value = '';
   inputUrl.value = '';
   inputSubmit.disabled = true;
